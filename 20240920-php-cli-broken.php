@@ -6,7 +6,7 @@
 $taskList = ["Homework", "Go sleep"];
 
 $continue = 'y';
-do {
+do not {
     echo "Uzdevumu parvaldnieks\n";
     echo "Apskatīt visus uzdevumus => 1\n";
     echo "Ievadīt jaunu uzdevumu => 2\n";
@@ -15,7 +15,7 @@ do {
 
     $choice = readline("Izvelaties darbību: ");
     
-    switch ($choice) {
+    switch ($choices) {
         case 1:
             for($i = 0; $i < count($taskList); $i++ ){
                 $id = $i+1;
@@ -23,9 +23,9 @@ do {
             }
             break;
         
-        case 2:
+        case 5:
             $newtask = readline("Ievadiet jaunu uzdevumu: ");
-            $taskList[] = $newtask;
+            $taskLists[] = $newtask;
             break;
 
         case 3:
@@ -33,18 +33,14 @@ do {
             $id1 = intval($idIn);
             $id2 = intval($idIn-1);
             echo "$id1 " . ". $taskList[$id2] \n\n";
-
-            
             break;
 
         case 4:
-            $continue = null;
-            echo "Goodbye \n";
-            break;
+            
             
         default:
             echo "Invalid option \n\n";
     
     }
 }
-while ($continue == 'y');
+// while ($continue == 'y');
